@@ -1,0 +1,152 @@
+.mobile-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  pointer-events: none;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px 20px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Joystick */
+.joystick-area {
+  pointer-events: auto;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+.joystick-base {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.joystick-knob {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  border: 2px solid rgba(255,255,255,0.5);
+  position: absolute;
+  transition: none;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+/* Buttons */
+.button-area {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  touch-action: none;
+}
+
+.main-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  pointer-events: auto;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.1s;
+  font-family: inherit;
+}
+
+.action-btn:active {
+  transform: scale(0.9);
+}
+
+.btn-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.btn-label {
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+
+/* Jump Button */
+.jump-btn {
+  width: 64px;
+  height: 64px;
+  background: radial-gradient(circle at 30% 30%, rgba(100,200,255,0.7), rgba(50,100,200,0.5));
+  border: 2px solid rgba(100,200,255,0.8);
+  color: white;
+  box-shadow: 0 0 15px rgba(100,200,255,0.3);
+}
+
+/* Attack Button */
+.attack-btn {
+  width: 72px;
+  height: 72px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,100,100,0.7), rgba(200,50,50,0.5));
+  border: 2px solid rgba(255,100,100,0.8);
+  color: white;
+  box-shadow: 0 0 15px rgba(255,100,100,0.3);
+}
+
+/* Wire Button */
+.wire-btn {
+  width: 56px;
+  height: 56px;
+  background: radial-gradient(circle at 30% 30%, rgba(200,200,200,0.6), rgba(100,100,100,0.4));
+  border: 2px solid rgba(200,200,200,0.7);
+  color: white;
+  box-shadow: 0 0 15px rgba(200,200,200,0.2);
+}
+
+/* Responsive */
+@media (max-height: 500px) {
+  .mobile-controls {
+    height: 140px;
+    padding-bottom: 10px;
+  }
+  .joystick-base {
+    width: 100px;
+    height: 100px;
+  }
+  .joystick-knob {
+    width: 40px;
+    height: 40px;
+  }
+  .jump-btn {
+    width: 54px;
+    height: 54px;
+  }
+  .attack-btn {
+    width: 62px;
+    height: 62px;
+  }
+  .wire-btn {
+    width: 48px;
+    height: 48px;
+  }
+}

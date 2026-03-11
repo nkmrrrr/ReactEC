@@ -1,0 +1,102 @@
+.titan-game {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.game-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Title Screen */
+.title-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(0,0,0,0.3) 30%,
+    rgba(0,0,0,0.5) 70%,
+    rgba(0,0,0,0.6) 100%
+  );
+}
+
+.title-screen h1 {
+  font-size: 52px;
+  color: #fff;
+  text-shadow:
+    0 0 40px rgba(255,80,0,0.8),
+    0 0 80px rgba(255,40,0,0.4),
+    3px 3px 0 #880000;
+  margin: 0;
+  letter-spacing: 8px;
+  font-weight: 900;
+  animation: title-glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgba(255,200,150,0.9);
+  text-shadow: 0 0 10px rgba(255,100,0,0.5);
+  margin-top: 8px;
+  letter-spacing: 4px;
+}
+
+.start-prompt {
+  margin-top: 40px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+.controls-help {
+  margin-top: 30px;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@keyframes title-glow {
+  from { text-shadow: 0 0 40px rgba(255,80,0,0.8), 0 0 80px rgba(255,40,0,0.4), 3px 3px 0 #880000; }
+  to { text-shadow: 0 0 60px rgba(255,120,0,1), 0 0 120px rgba(255,60,0,0.6), 3px 3px 0 #aa0000; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Mobile optimizations */
+@media (max-width: 600px) {
+  .title-screen h1 {
+    font-size: 36px;
+    letter-spacing: 4px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+}
